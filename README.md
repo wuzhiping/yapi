@@ -4,3 +4,9 @@ sudo docker-compose run --rm yapi npm run install-server
 # ymfe.org
 
 <img src="./plugin.png"/>
+
+<style>
+  .footer-wrapper { display:none!important; }
+  .router-main:after { height:0!important; }
+</style>
+
