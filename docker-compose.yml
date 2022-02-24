@@ -1,0 +1,34 @@
+version: '2'
+services:
+  yapi:
+    image: shawoo/yapi
+    restart: always
+    ports:
+      - "8183:3000"
+    links:
+      - mongo
+    volumes:
+      - ./config.json:/yapi/config.json
+    command: node server/app.js
+    stdin_open: true
+    tty: true
+   
+  mongo:
+    image: shawoo/mongo:4
+    restart: always
+    volumes:
+      - ./bson/db:/data/db
+      - ./bson/configdb:/data/configdb
+    command: mongod --port 27017 --bind_ip 0.0.0.0
+
+  express:
+    image: mongo-express
+    restart: always
+    environment:
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=PWD
+    links:
+      - mongo:mongo
+    ports:
+      - "8083:8081"
+

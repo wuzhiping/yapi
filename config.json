@@ -1,0 +1,25 @@
+{
+  "port": "3000",
+  "adminAccount": "wu.zhiping@feg.cn",
+  "versionNotify": true,
+  "closeRegister":true,
+  "timeout":120000,
+  "db": {
+    "servername": "mongo",
+    "DATABASE": "yapi",
+    "port": 27017,
+    "user": "",
+    "pass": "",
+    "authSource": ""
+  },
+  "mail": {
+    "enable": false,
+    "host": "10.17.22.79",
+    "port": 25,
+    "from": "ateam@feg.cn",
+    "auth": {
+      "user": "",
+      "pass": ""
+    }
+  }
+}
