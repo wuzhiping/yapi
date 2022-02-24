@@ -5,6 +5,8 @@ services:
     restart: always
     ports:
       - "8183:3000"
+    depends_on:
+      - mongo
     links:
       - mongo
     volumes:
